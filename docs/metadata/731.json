@@ -1,0 +1,20 @@
+{
+ "description": "Fossil Agent NFT - the on-chain badge of the dinosaur-era agent that never stops hunting. Holders are snapshot for planned FOSSIL community airdrops (no promised returns).",
+ "image": "https://raw.githubusercontent.com/NotWinSir/fossil-agent/main/assets/logo.png",
+ "external_url": "https://notwinsir.github.io/fossil-agent/",
+ "name": "Fossil Agent NFT #731",
+ "attributes": [
+  {
+   "trait_type": "Type",
+   "value": "Fossil"
+  },
+  {
+   "trait_type": "Class",
+   "value": "Hunter"
+  },
+  {
+   "trait_type": "Edition",
+   "value": 731
+  }
+ ]
+}

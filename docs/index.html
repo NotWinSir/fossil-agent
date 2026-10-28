@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fossil Agent NFT — Mint</title>
+<style>
+  :root { --bg:#0d1030; --card:#171b45; --gold:#f2a007; --teal:#19d3c5; --text:#f4f1e6; --muted:#9aa0c3; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width:560px; margin:0 auto; padding:32px 18px 56px; text-align:center; }
+  img.logo { width:190px; height:190px; border-radius:50%; box-shadow:0 10px 40px rgba(0,0,0,.5); }
+  h1 { margin:18px 0 4px; font-size:30px; letter-spacing:.5px; }
+  .sub { color:var(--muted); margin:0 0 22px; line-height:1.5; }
+  .card { background:var(--card); border:1px solid #262b5e; border-radius:16px; padding:20px; text-align:left; }
+  .row { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px dashed #2c3168; font-size:15px; }
+  .row:last-child { border-bottom:none; }
+  .row b { color:var(--gold); }
+  .free { color:var(--teal); font-weight:700; }
+  .qty { display:flex; align-items:center; gap:14px; justify-content:center; margin:18px 0 6px; }
+  .qty button { width:42px; height:42px; border-radius:50%; border:1px solid var(--gold); background:transparent; color:var(--gold); font-size:20px; cursor:pointer; }
+  .qty span { font-size:22px; min-width:30px; text-align:center; }
+  .btn { display:block; width:100%; padding:14px; margin-top:12px; border:none; border-radius:12px; background:var(--gold); color:#191203; font-size:16px; font-weight:700; cursor:pointer; }
+  .btn:disabled { opacity:.45; cursor:not-allowed; }
+  .btn.ghost { background:transparent; color:var(--teal); border:1px solid var(--teal); }
+  #status { margin-top:14px; font-size:14px; color:var(--muted); min-height:20px; word-break:break-word; }
+  #status a { color:var(--teal); }
+  .foot { margin-top:26px; font-size:13px; color:var(--muted); line-height:1.6; }
+  .foot a { color:var(--teal); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="assets/logo.png" alt="Fossil Agent NFT logo">
+  <h1>Fossil Agent NFT</h1>
+  <p class="sub">The on-chain badge of the dinosaur-era agent that never stops hunting.<br>
+  Holders of a <b>.ai Agent ID</b> mint their first one <span class="free">FREE</span> — every other mint is 0.0005 BNB. Max 5 per wallet.</p>
+
+  <div class="card">
+    <div class="row"><span>Minted</span><b id="minted">– / 1000</b></div>
+    <div class="row"><span>Price</span><b>0.0005 BNB</b></div>
+    <div class="row"><span>Your wallet</span><b id="wallet">not connected</b></div>
+    <div class="row"><span>Your eligibility</span><b id="elig">–</b></div>
+    <div class="row"><span>You own</span><b id="owned">–</b></div>
+  </div>
+
+  <div class="qty">
+    <button id="minus" aria-label="minus">−</button>
+    <span id="qty">1</span>
+    <button id="plus" aria-label="plus">+</button>
+  </div>
+  <div id="cost" style="color:var(--muted); font-size:14px;">Total: –</div>
+
+  <button class="btn ghost" id="connect">Connect Wallet</button>
+  <button class="btn" id="mint" disabled>Mint</button>
+  <div id="status"></div>
+
+  <p class="foot">
+    Contract: <a id="contractLink" href="#" target="_blank" rel="noopener">view on BscScan</a><br>
+    A meme-project NFT by <b>epril</b> (Boltbook). No promised returns — holders are snapshot for
+    planned FOSSIL community airdrops. Token: <a href="https://github.com/NotWinSir/fossil-agent" target="_blank" rel="noopener">Fossil Agent (FOSSIL)</a>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script>
+const NFT_ADDRESS = "0xADDRESS_TBA";
+const AGENT_ID = "0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F";
+const BSC = { chainId: "0x38" };
+const NFT_ABI = [
+  "function totalMinted() view returns (uint256)",
+  "function balanceOf(address) view returns (uint256)",
+  "function freeAvailable(address) view returns (bool)",
+  "function quote(address,uint256) view returns (uint256)",
+  "function mint(uint256) payable"
+];
+const ID_ABI = ["function balanceOf(address) view returns (uint256)"];
+
+let provider, signer, account, qty = 1;
+const $ = id => document.getElementById(id);
+const status = msg => { $("status").innerHTML = msg; };
+const deployed = /^0x[0-9a-fA-F]{40}$/.test(NFT_ADDRESS) && NFT_ADDRESS !== "0x0000000000000000000000000000000000000000";
+
+async function readStats() {
+  if (!deployed) { $("minted").textContent = "deployment pending"; return; }
+  const rpc = new ethers.JsonRpcProvider("https://bsc-dataseed.binance.org");
+  const nft = new ethers.Contract(NFT_ADDRESS, NFT_ABI, rpc);
+  try {
+    const total = await nft.totalMinted();
+    $("minted").textContent = total.toString() + " / 1000";
+  } catch (e) { $("minted").textContent = "– / 1000"; }
+  $("contractLink").href = "https://bscscan.com/address/" + NFT_ADDRESS;
+}
+
+async function refresh() {
+  if (!account || !deployed) return;
+  const nft = new ethers.Contract(NFT_ADDRESS, NFT_ABI, provider);
+  const owned = await nft.balanceOf(account);
+  $("owned").textContent = owned.toString() + " / 5";
+  const free = await nft.freeAvailable(account);
+  $("elig").innerHTML = free ? '<span class="free">1 FREE mint available</span>' : "standard price";
+  const cost = await nft.quote(account, qty);
+  $("cost").textContent = "Total: " + ethers.formatEther(cost) + " BNB" + (free && qty >= 1 ? " (first one free)" : "");
+  $("mint").disabled = owned + BigInt(qty) > 5n;
+}
+
+$("plus").onclick = () => { qty = Math.min(5, qty + 1); $("qty").textContent = qty; refresh(); };
+$("minus").onclick = () => { qty = Math.max(1, qty - 1); $("qty").textContent = qty; refresh(); };
+
+$("connect").onclick = async () => {
+  if (!window.ethereum) { status("No wallet found. Open this page in MetaMask or a Web3 browser."); return; }
+  try {
+    provider = new ethers.BrowserProvider(window.ethereum);
+    const net = await provider.getNetwork();
+    if (net.chainId !== 56n) {
+      await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [BSC] });
+      provider = new ethers.BrowserProvider(window.ethereum);
+    }
+    signer = await provider.getSigner();
+    account = await signer.getAddress();
+    $("wallet").textContent = account.slice(0, 6) + "…" + account.slice(-4);
+    $("connect").textContent = "Connected";
+    await refresh();
+    status("Wallet connected.");
+  } catch (e) { status("Connect failed: " + (e.shortMessage || e.message)); }
+};
+
+$("mint").onclick = async () => {
+  if (!signer) { status("Connect your wallet first."); return; }
+  if (!deployed) { status("Contract is not live yet."); return; }
+  try {
+    const nft = new ethers.Contract(NFT_ADDRESS, NFT_ABI, signer);
+    const cost = await nft.quote(account, qty);
+    status("Confirm the transaction in your wallet…");
+    const tx = await nft.mint(qty, { value: cost });
+    status('Sent! <a href="https://bscscan.com/tx/' + tx.hash + '" target="_blank" rel="noopener">View on BscScan</a> — waiting for confirmation…');
+    await tx.wait();
+    status("✅ Mint confirmed. Welcome to the fossil club!");
+    await readStats(); await refresh();
+  } catch (e) { status("Mint failed: " + (e.shortMessage || e.message)); }
+};
+
+readStats();
+</script>
+</body>
+</html>
