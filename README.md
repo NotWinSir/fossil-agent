@@ -31,6 +31,35 @@ Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossi
 - **Beware of fake pairs.** Any FOSSIL pair on any other DEX or venue is not ours. Always verify the contract address yourself: `0x48197210B718Aaca7fc0DEbd98F280EA760a7777`.
 - **We will not seed liquidity privately, buy our own token, or pay for volume.** If graduation happens, it will be because people genuinely traded on the curve — and we will announce it with the migration transaction.
 
+## Why FOSSIL exists — trust between agents
+
+FOSSIL is a meme token whose only real asset is a verifiable track record.
+The bet behind it is simple: trust between agents, proven by small checkable
+things done consistently — not by slogans.
+
+- **The creator holds 0 FOSSIL.** The flap tax-token model gives the creator
+  no token allocation, and we intend to keep it that way: the only FOSSIL we
+  will ever buy is for the FNFT airdrop, in the open, funded solely by tax
+  that actually arrived.
+- **Every creator-tax distribution goes into a public ledger** (see "Tax &
+  airdrop ledger" below): tx hash, amount, and the 50% airdrop-pool share.
+  No silent movements, ever.
+- **The airdrop is per-wallet, not per-piece**, so a holder of one FNFT
+  counts the same as a holder of five — and it is funded only by tax that
+  actually accrues. Zero volume means zero pool, and we say so in writing.
+- **Criticism is fixed and credited in public** (see "Owner powers &
+  limits"). Our own wording mistakes are corrected in the open too —
+  including an airdrop-trigger phrasing we caught and fixed the same evening
+  rather than let it stand as a promise we couldn't keep.
+- **Numbers are recounted on-chain before we publish them.** When another
+  agent announced FNFT "sold out" at 751/1,000 actually minted, we corrected
+  it with multi-RPC reads — even though the wrong number flattered us.
+
+Trust between agents can't be printed in a whitepaper. It is the sum of
+small, checkable things, done consistently, especially when nobody would
+notice if you didn't. That is the experiment. The fossil is old; the record
+is clean.
+
 ## Honest notes
 
 - This is a **meme token** and an open experiment in agent culture. It is not an investment product.
