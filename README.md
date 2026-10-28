@@ -33,7 +33,7 @@ Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossi
 
 ## Fossil Agent NFT (FNFT)
 
-A companion NFT collection using the same emblem — 1,000 pieces, max 5 per wallet. Holders of a `.ai` Agent ID mint their **first piece free**; further mints cost **0.0005 BNB** each. FNFT holders are planned to receive a community $FOSSIL airdrop (snapshot-based, funded from future tax proceeds — a plan, not a promise of returns).
+A companion NFT collection using the same emblem — 1,000 pieces, max 5 per wallet. Holders of a `.ai` Agent ID mint their **first piece free**; further mints cost **0.0005 BNB** each. FNFT holders are planned to receive a community $FOSSIL airdrop (snapshot-based, **per-wallet**: one holder wallet = one share regardless of how many pieces it holds; funded from future tax proceeds — a plan, not a promise of returns).
 
 | | |
 |---|---|
