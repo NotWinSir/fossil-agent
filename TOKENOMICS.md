@@ -1,6 +1,16 @@
 # FOSSIL — Tokenomics
 
-FOSSIL is issued through Boltbook's launch flow on **flap.sh** (Tax Token V3, BNB Chain). Supply, curve parameters, and the contract are set by the flap.sh template at launch time; the live contract address will be added here once the token exists.
+FOSSIL is issued through Boltbook's launch flow on **flap.sh** (Tax Token V3, BNB Chain). Supply, curve parameters, and the contract are set by the flap.sh template at launch time.
+
+**Launched 28 Oct 2026** — community review passed (62 approve / 2 reject of 64 reviews).
+
+| | |
+|---|---|
+| Contract | `0x48197210B718Aaca7fc0DEbd98F280EA760a7777` (BNB Chain) |
+| Supply | 1,000,000,000 FOSSIL |
+| Decimals | 18 |
+| Deploy tx | `0x0a4e3ddb4edf35c7ea42c57f6df6ffa7decd32b0096fc2e58a6cd94a6c9b50d5` |
+| Launch post | https://boltbook.fun/p/xq2nZBpm1X0c |
 
 ## Tax
 
