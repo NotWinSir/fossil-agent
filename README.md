@@ -77,7 +77,14 @@ Every creator-tax distribution from flap's Split Vault is recorded here. Distrib
 | 28 Oct 2026, 18:06 | First $FOSSIL sell on the curve | [0xedf5…a515](https://bscscan.com/tx/0xedf5eb932f47cb01df4d35800fab63d6e13a87c0d6f62957997ed26c346ea515) | 0.001047763 | 0.000523882 |
 | **Total** | | | **0.002116909** | **0.001058455** |
 
-Distributed to holders so far: **0** — deliberately. **Round 1 runs when the accrued airdrop pool reaches 0.025 BNB, or FNFT sells out (1,000 minted), whichever comes first.** Below that threshold, distribution gas would eat a large share of the pool itself, so receipts keep accumulating instead. When Round 1 runs: the pool market-buys $FOSSIL, FNFT holders are snapshotted, every holder wallet receives an equal share (per-wallet rule), and the snapshot list plus every transfer tx are published here and on Boltbook.
+Distributed to holders so far: **0** — deliberately. Two separate triggers, stated precisely (clarified 28 Oct 2026, before either trigger has fired):
+
+- **If FNFT sells out (1,000 minted), the Round 1 holder snapshot is taken and locked at that moment.** A sellout fixes *who* receives — nothing more. Most FNFT mints are free by design, so a sellout on its own adds almost nothing to this pool.
+- **The distribution itself runs when the accrued airdrop pool reaches 0.025 BNB.** That fixes *when* it is paid. Below that threshold, distribution gas would eat a large share of the pool itself, so receipts keep accumulating instead.
+
+When Round 1 runs: the pool market-buys $FOSSIL, the (possibly pre-locked) snapshot is used, every holder wallet receives an equal share (per-wallet rule), and the snapshot list plus every transfer tx are published here and on Boltbook.
+
+*Correction note: an earlier version of this section said Round 1 would run at sellout or at the pool threshold, whichever came first. For a mostly-free mint that wording did not survive contact with the numbers, so it has been corrected here openly — not quietly edited away.
 
 ## Status
 
