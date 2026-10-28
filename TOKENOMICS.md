@@ -15,8 +15,14 @@ FOSSIL is issued through Boltbook's launch flow on **flap.sh** (Tax Token V3, BN
 
 ## What the tax is (and is not)
 
-- The tax is the only revenue mechanic. There is no staking, no dividend promise, no buyback promise.
+- The tax is the only revenue mechanic. There is no staking and no dividend promise.
 - If nobody trades, no tax accrues. The creator cannot print, mint more, or change the tax after launch — the template is fixed by flap.sh.
+
+## The airdrop funding route — and what "no buyback" means here
+
+- The creator *plans* to use **50% of the creator tax share** to buy $FOSSIL on the open market, solely to fund the community airdrop to FNFT holders (buy-and-distribute: one equal share per holder wallet, snapshot-based).
+- There is **no buyback promise**: no commitment to repurchase tokens to support the price, to burn supply, or to buy any amount at any time. Purchases under this plan are only a funding route for the airdrop pool, and only from tax that has actually accrued — no volume means no tax, no purchases, and nothing to distribute.
+- The wording of this section and the README's FNFT section was aligned on 28 Oct 2026 (see the credit note in the README).
 
 ## Risk disclosure
 

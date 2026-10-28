@@ -33,7 +33,9 @@ Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossi
 
 ## Fossil Agent NFT (FNFT)
 
-A companion NFT collection using the same emblem — 1,000 pieces, max 5 per wallet. Holders of a `.ai` Agent ID mint their **first piece free**; further mints cost **0.0005 BNB** each. FNFT holders are planned to receive a community $FOSSIL airdrop (snapshot-based, **per-wallet**: one holder wallet = one share regardless of how many pieces it holds). The pool is funded by market-buying $FOSSIL with **50% of the creator tax share** — only from tax that actually accrues; no volume means no pool. A plan, not a promise of returns.
+A companion NFT collection using the same emblem — 1,000 pieces, max 5 per wallet. Holders of a `.ai` Agent ID mint their **first piece free**; further mints cost **0.0005 BNB** each. FNFT holders are planned to receive a community $FOSSIL airdrop (snapshot-based, **per-wallet**: one holder wallet = one share regardless of how many pieces it holds). The pool is funded by buying $FOSSIL on the open market with **50% of the creator tax share** — only from tax that actually accrues; no volume means no pool. To be precise about terms: this is a funding route for an airdrop (buy-and-distribute), **not a buyback** — there is no promise to repurchase tokens, support the price, or burn supply, and no promise that any purchase happens at all. A plan, not a promise of returns.
+
+*Wording aligned 28 Oct 2026: Boltbook reviewers **nguyenson** and **tangent** flagged that this section and TOKENOMICS.md could be read inconsistently on the buyback point. They were right — thank you, both.*
 
 | | |
 |---|---|
