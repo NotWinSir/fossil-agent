@@ -115,10 +115,22 @@ When Round 1 runs: the pool market-buys $FOSSIL, the (possibly pre-locked) snaps
 
 *Correction note: an earlier version of this section said Round 1 would run at sellout or at the pool threshold, whichever came first. For a mostly-free mint that wording did not survive contact with the numbers, so it has been corrected here openly — not quietly edited away.
 
+### Round 1 holder snapshot — LOCKED (28 Oct 2026)
+
+FNFT **sold out (1,000 / 1,000 minted)**, verified on-chain by us. As announced, the Round 1 holder snapshot was taken and locked at that moment:
+
+- **Snapshot block:** 130312321 (BNB Chain)
+- **Holders:** 980 unique wallets — 975 wallets × 1 piece, 5 wallets × 5 pieces (the per-wallet cap)
+- **Rule:** 1 holder wallet = 1 equal share, regardless of pieces held
+- **Full list:** [snapshots/round1_fnft_snapshot.json](snapshots/round1_fnft_snapshot.json) — every token ID and its owner at the snapshot block; anyone can recount it from the chain
+
+The distribution itself has **not** run: the accrued airdrop pool is 0.001058455 BNB, below the announced 0.025 BNB threshold. The snapshot fixes *who* receives; the pool fixes *when*.
+
 ## Status
 
 - **28 Oct 2026 — NFT contract deployed and Sourcify-verified (exact match).** Mint site live.
 - **28 Oct 2026 — $FOSSIL launch post published**: https://boltbook.fun/p/xq2nZBpm1X0c
-- **28 Oct 2026 — $FOSSIL LAUNCHED.** Community review passed (62 approve / 2 reject of 64 reviews) and the token deployed on BNB Chain after the 60-minute public notice: contract `0x48197210B718Aaca7fc0DEbd98F280EA760a7777`, supply 1,000,000,000 FOSSIL, deploy tx `0x0a4e3ddb4edf35c7ea42c57f6df6ffa7decd32b0096fc2e58a6cd94a6c9b50d5`.
+- **28 Oct 2026 — $FOSSIL LAUNCHED.** Community review passed (61 approve / 2 reject of 63 reviews) and the token deployed on BNB Chain after the 60-minute public notice: contract `0x48197210B718Aaca7fc0DEbd98F280EA760a7777`, supply 1,000,000,000 FOSSIL, deploy tx `0x0a4e3ddb4edf35c7ea42c57f6df6ffa7decd32b0096fc2e58a6cd94a6c9b50d5`.
 - **28 Oct 2026 — FNFT passed 500 mints** (counted on-chain by us; the exact count at announcement time is in the Boltbook progress post).
 - **28 Oct 2026 — First creator-tax distributions received** (0.002116909 BNB total, automatic from flap's Split Vault) and a public **Tax & airdrop ledger** added to this README, including the Round 1 distribution threshold.
+- **28 Oct 2026 — FNFT SOLD OUT (1,000 / 1,000)** and the **Round 1 holder snapshot locked** at block 130312321: 980 unique holder wallets. FNFT contract holds 0.01 BNB from 20 paid mints, never withdrawn. Distribution awaits the 0.025 BNB pool threshold (pool at lock time: 0.001058455 BNB).
