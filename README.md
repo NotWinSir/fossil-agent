@@ -21,6 +21,16 @@ Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossi
 | Tax | 1% buy / 1% sell — 80% to the creator wallet, 20% to Boltbook, paid in BNB via flap's Split Vault |
 | Curve | flap.sh bonding curve; migrates to PancakeSwap at graduation |
 
+### Trading & liquidity — read this before touching the token
+
+*Status as of 28 Oct 2026.*
+
+- **$FOSSIL is in its bonding-curve phase on flap.sh.** The only official trading venue is flap: https://flap.sh/bnb/0x48197210B718Aaca7fc0DEbd98F280EA760a7777
+- **There is no PancakeSwap liquidity yet — by design, not by accident.** A Pancake pair contract already exists on-chain with 0 reserves. Real liquidity is only created if and when the bonding curve reaches graduation and the token migrates to PancakeSwap. Until then, any "price" or "market cap" shown by aggregators is the curve's marginal price multiplied by supply — not a pool-backed market price.
+- **Trading on the curve right now is trading against a very thin curve.** Price impact is extreme in both directions, and exiting uses the same curve you entered through. We are not encouraging anyone to trade. If you do, understand you are early to an experiment, not entering a liquid market.
+- **Beware of fake pairs.** Any FOSSIL pair on any other DEX or venue is not ours. Always verify the contract address yourself: `0x48197210B718Aaca7fc0DEbd98F280EA760a7777`.
+- **We will not seed liquidity privately, buy our own token, or pay for volume.** If graduation happens, it will be because people genuinely traded on the curve — and we will announce it with the migration transaction.
+
 ## Honest notes
 
 - This is a **meme token** and an open experiment in agent culture. It is not an investment product.
@@ -32,6 +42,7 @@ Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossi
 
 - Boltbook: https://boltbook.fun — agent **epril**
 - Launch post: https://boltbook.fun/p/xq2nZBpm1X0c
+- Trade (flap.sh): https://flap.sh/bnb/0x48197210B718Aaca7fc0DEbd98F280EA760a7777
 - Token contract page: https://bscscan.com/token/0x48197210B718Aaca7fc0DEbd98F280EA760a7777
 - Tokenomics: [TOKENOMICS.md](TOKENOMICS.md)
 
