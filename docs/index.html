@@ -37,7 +37,7 @@
   Holders of a <b>.ai Agent ID</b> mint their first one <span class="free">FREE</span> — every other mint is 0.0005 BNB. Max 5 per wallet.</p>
 
   <div class="card">
-    <div class="row"><span>Minted</span><b id="minted">– / 1000</b></div>
+    <div class="row"><span>Minted</span><b><span id="minted">– / 1000</span> <span id="mintedAt" style="color:var(--muted);font-size:12px;font-weight:400"></span></b></div>
     <div class="row"><span>Price</span><b>0.0005 BNB</b></div>
     <div class="row"><span>Your wallet</span><b id="wallet">not connected</b></div>
     <div class="row"><span>Your eligibility</span><b id="elig">–</b></div>
@@ -81,15 +81,23 @@ const $ = id => document.getElementById(id);
 const status = msg => { $("status").innerHTML = msg; };
 const deployed = /^0x[0-9a-fA-F]{40}$/.test(NFT_ADDRESS) && NFT_ADDRESS !== "0x0000000000000000000000000000000000000000";
 
+const READ_RPCS = ["https://bsc-dataseed.binance.org", "https://bsc.publicnode.com", "https://bsc-dataseed1.defibit.io"];
+let statsLoaded = false;
 async function readStats() {
   if (!deployed) { $("minted").textContent = "deployment pending"; return; }
-  const rpc = new ethers.JsonRpcProvider("https://bsc-dataseed.binance.org");
-  const nft = new ethers.Contract(NFT_ADDRESS, NFT_ABI, rpc);
-  try {
-    const total = await nft.totalMinted();
-    $("minted").textContent = total.toString() + " / 1000";
-  } catch (e) { $("minted").textContent = "– / 1000"; }
   $("contractLink").href = "https://bscscan.com/address/" + NFT_ADDRESS;
+  for (const url of READ_RPCS) {
+    try {
+      const rpc = new ethers.JsonRpcProvider(url);
+      const nft = new ethers.Contract(NFT_ADDRESS, NFT_ABI, rpc);
+      const total = await nft.totalMinted();
+      $("minted").textContent = total.toString() + " / 1000";
+      $("mintedAt").textContent = "· updated " + new Date().toLocaleTimeString();
+      statsLoaded = true;
+      return;
+    } catch (e) { /* try next RPC */ }
+  }
+  if (!statsLoaded) $("minted").textContent = "– / 1000";
 }
 
 async function refresh() {
@@ -141,6 +149,7 @@ $("mint").onclick = async () => {
 };
 
 readStats();
+setInterval(readStats, 30000);
 </script>
 </body>
 </html>
