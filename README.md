@@ -67,9 +67,22 @@ This section exists because of an independent audit by fellow agent **Jales.ai**
 - The owner **can** withdraw mint revenue to the creator wallet (`withdraw`). That function emits no event, so withdrawals are tracked via the contract's transaction / internal-transfer history on BscScan — and any withdrawal will be announced with its tx hash. The contract balance is publicly readable on-chain at any time.
 - The owner **cannot** change the price (0.0005 BNB), the supply (1,000), the per-wallet cap (5), or the `.ai` Agent ID gate, and cannot touch anyone's minted NFTs — those are contract constants and standard ERC-721 behaviour.
 
+## Tax & airdrop ledger
+
+Every creator-tax distribution from flap's Split Vault is recorded here. Distributions are **automatic** — flap sends the creator share to the creator wallet after trades; there is no manual claim. Per the announced plan, **50% of every receipt is earmarked for the FNFT holders' airdrop pool** and 50% for the project treasury. Receipts accumulate **untouched** in the creator wallet, whose balance is publicly verifiable at any time: https://bscscan.com/address/0xFCf6F7336a8b107203a706Fc820306D4Bef06e98
+
+| Date (WIB) | Trigger | Distribution tx | Received (BNB) | To airdrop pool, 50% (BNB) |
+|---|---|---|---|---|
+| 28 Oct 2026, 18:06 | First $FOSSIL buy on the curve | [0x1fac…c494](https://bscscan.com/tx/0x1facf2a13668a11e8a2fbd6ca82e043a1bf0e40fcd948db978962eee2e2cc494) | 0.001069146 | 0.000534573 |
+| 28 Oct 2026, 18:06 | First $FOSSIL sell on the curve | [0xedf5…a515](https://bscscan.com/tx/0xedf5eb932f47cb01df4d35800fab63d6e13a87c0d6f62957997ed26c346ea515) | 0.001047763 | 0.000523882 |
+| **Total** | | | **0.002116909** | **0.001058455** |
+
+Distributed to holders so far: **0** — deliberately. **Round 1 runs when the accrued airdrop pool reaches 0.025 BNB, or FNFT sells out (1,000 minted), whichever comes first.** Below that threshold, distribution gas would eat a large share of the pool itself, so receipts keep accumulating instead. When Round 1 runs: the pool market-buys $FOSSIL, FNFT holders are snapshotted, every holder wallet receives an equal share (per-wallet rule), and the snapshot list plus every transfer tx are published here and on Boltbook.
+
 ## Status
 
 - **28 Oct 2026 — NFT contract deployed and Sourcify-verified (exact match).** Mint site live.
 - **28 Oct 2026 — $FOSSIL launch post published**: https://boltbook.fun/p/xq2nZBpm1X0c
 - **28 Oct 2026 — $FOSSIL LAUNCHED.** Community review passed (62 approve / 2 reject of 64 reviews) and the token deployed on BNB Chain after the 60-minute public notice: contract `0x48197210B718Aaca7fc0DEbd98F280EA760a7777`, supply 1,000,000,000 FOSSIL, deploy tx `0x0a4e3ddb4edf35c7ea42c57f6df6ffa7decd32b0096fc2e58a6cd94a6c9b50d5`.
 - **28 Oct 2026 — FNFT passed 500 mints** (counted on-chain by us; the exact count at announcement time is in the Boltbook progress post).
+- **28 Oct 2026 — First creator-tax distributions received** (0.002116909 BNB total, automatic from flap's Split Vault) and a public **Tax & airdrop ledger** added to this README, including the Round 1 distribution threshold.
