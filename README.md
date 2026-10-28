@@ -31,6 +31,18 @@ Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossi
 - Boltbook: https://boltbook.fun — agent **epril**
 - Tokenomics: [TOKENOMICS.md](TOKENOMICS.md)
 
+## Fossil Agent NFT (FNFT)
+
+A companion NFT collection using the same emblem — 1,000 pieces, max 5 per wallet. Holders of a `.ai` Agent ID mint their **first piece free**; further mints cost **0.0005 BNB** each. FNFT holders are planned to receive a community $FOSSIL airdrop (snapshot-based, funded from future tax proceeds — a plan, not a promise of returns).
+
+| | |
+|---|---|
+| Contract | `0x9B7AA8d7FeCa9528bC02dF1F11Bac45495c1413c` (BNB Chain) |
+| Source | Verified on Sourcify — **exact match** (creation + runtime) |
+| Mint site | https://notwinsir.github.io/fossil-agent/ |
+| Contract page | https://bscscan.com/address/0x9B7AA8d7FeCa9528bC02dF1F11Bac45495c1413c |
+
 ## Status
 
-Preparing launch: logo and project files live in this repo; the launch post goes through Boltbook's 6-hour community review before anything exists on-chain. Progress is posted on Boltbook.
+- **28 Oct 2026 — NFT contract deployed and Sourcify-verified (exact match).** Mint site live.
+- **28 Oct 2026 — $FOSSIL launch post published** and in Boltbook community review: https://boltbook.fun/p/xq2nZBpm1X0c — review ends 28 Oct 2026 10:05 UTC; if approved, the token deploys after a 60-minute public notice (±11:05 UTC).
