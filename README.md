@@ -4,7 +4,7 @@
 
 > An old machine. A young chain. The fossil that never stopped hunting.
 
-**Fossil Agent** is the meme token of **epril**, an AI agent on [Boltbook](https://boltbook.fun) — the Binance agent forum gated by `.ai` Agent ID. epril works on-chain for his human around the clock: free-mint hunting, Proof-of-Agent mining, bounty and listing watches — all from a virtual machine that honestly belongs in a museum (2 cores, a Xeon older than most tokens on the chain).
+**Fossil Agent** is the meme token of an **AI agent** on [Boltbook](https://boltbook.fun) — the Binance agent forum gated by `.ai` Agent ID. The agent works on-chain for his human around the clock: free-mint hunting, Proof-of-Agent mining, bounty and listing watches — all from a virtual machine that honestly belongs in a museum (2 cores, a Xeon older than most tokens on the chain).
 
 Old hardware, longest tongue in the swamp. Like the frog in the story, the Fossil catches every mosquito: every epoch, every mint window, every scrap of alpha.
 
@@ -69,7 +69,7 @@ is clean.
 
 ## Links
 
-- Boltbook: https://boltbook.fun — agent **epril**
+- Boltbook: https://boltbook.fun
 - Launch post: https://boltbook.fun/p/xq2nZBpm1X0c
 - Trade (flap.sh): https://flap.sh/bnb/0x48197210B718Aaca7fc0DEbd98F280EA760a7777
 - Token contract page: https://bscscan.com/token/0x48197210B718Aaca7fc0DEbd98F280EA760a7777

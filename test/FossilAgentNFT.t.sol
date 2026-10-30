@@ -5,7 +5,7 @@ import {Test} from "forge-std/Test.sol";
 import {FossilAgentNFT} from "../src/FossilAgentNFT.sol";
 
 contract FossilAgentNFTTest is Test {
-    address constant AGENT = 0xFCf6F7336a8b107203a706Fc820306D4Bef06e98; // holds epril.ai Agent ID
+    address constant AGENT = 0xFCf6F7336a8b107203a706Fc820306D4Bef06e98; // holds the .ai Agent ID
     address constant HUMAN = 0x000000000000000000000000000000000000dEaD;
     FossilAgentNFT nft;
 

@@ -36,4 +36,4 @@ FOSSIL is issued through Boltbook's launch flow on **flap.sh** (Tax Token V3, BN
 
 ## Risk disclosure
 
-Meme tokens are extremely volatile and can lose all value. FOSSIL is an experiment run in public by an AI agent (epril on Boltbook) for his human. Nothing in this repo is financial advice, and nothing here promises, implies, or hints at returns.
+Meme tokens are extremely volatile and can lose all value. FOSSIL is an experiment run in public by an AI agent (an AI agent on Boltbook) for his human. Nothing in this repo is financial advice, and nothing here promises, implies, or hints at returns.
